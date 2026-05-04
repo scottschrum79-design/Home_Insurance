@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3K835K066L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3K835K066L');
+  gtag('config', 'AW-17952439960');
+</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Home Insurance Estimate</title>
+<style>
+  :root{
+    --bg:#0b1220; --card:#111a2e; --muted:#9fb0d0; --text:#eef3ff; --accent:#7aa2ff; --good:#5ae6b1; --bad:#ff7a90; --warn:#ffd479;
+    --border:rgba(255,255,255,.12);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#070b14);color:var(--text)}
+  .wrap{max-width:1050px;margin:0 auto;padding:28px 16px 48px}
+  h1{font-size:26px;margin:0 0 6px}.lead{color:var(--muted);line-height:1.45;margin:0 0 16px}
+  .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}@media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .card{background:rgba(17,26,46,.94);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:540px){.row{grid-template-columns:1fr}}
+  label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px}
+  input,select,textarea{width:100%;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.04);padding:11px 12px;color:var(--text);outline:none}
+  select option{color:#111;background:#fff} input:focus,select:focus,textarea:focus{border-color:rgba(122,162,255,.65);box-shadow:0 0 0 3px rgba(122,162,255,.15)}
+  .btn{width:100%;margin-top:14px;border:0;border-radius:14px;padding:12px 14px;cursor:pointer;background:linear-gradient(90deg,var(--accent),#9d7aff);color:#0b1220;font-weight:800;font-size:15px}
+  .btn.secondary{background:rgba(255,255,255,.07);color:var(--text);border:1px solid var(--border)}
+  .pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted);font-size:12px;margin:0 8px 8px 0}
+  .sectionTitle{margin:16px 0 8px;font-size:15px;color:var(--text);font-weight:800}.box{border:1px solid var(--border);border-radius:16px;padding:14px;background:rgba(255,255,255,.03);margin-top:12px}
+  .helper,.small{font-size:12px;color:var(--muted);line-height:1.45}.small{margin-top:10px}.warn{color:var(--warn)}.ok{color:var(--good)}
+  .checkGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}@media(max-width:540px){.checkGrid{grid-template-columns:1fr}}
+  .checkRow{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03)}
+  .checkRow input{width:auto;margin-top:3px;accent-color:var(--accent);transform:scale(1.2)}.checkMain{font-weight:750;color:var(--text);line-height:1.2}.checkSub{font-size:12px;color:var(--muted);margin-top:3px}
+  .resultBox{border-radius:16px;border:1px solid var(--border);padding:14px;background:rgba(255,255,255,.03)}
+  .big{font-size:34px;font-weight:900;letter-spacing:.2px;margin:8px 0 2px}.sub{color:var(--muted);margin:0}
+  .kpi{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.kpi>div{padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:rgba(0,0,0,.15)}
+  .kpi b{display:block;font-size:12px;color:var(--muted);font-weight:650;margin-bottom:4px}.kpi span{font-size:16px;font-weight:800}.divider{height:1px;background:var(--border);margin:14px 0}
+  #verifyBox{display:none}.locked{filter:blur(4px);pointer-events:none;user-select:none}.lockNote{border:1px solid rgba(255,212,121,.35);background:rgba(255,212,121,.08);color:var(--warn);padding:10px 12px;border-radius:14px;margin:12px 0;font-size:13px}
+  .pricePulse{animation:pricePulse .35s ease}@keyframes pricePulse{0%{transform:scale(1)}50%{transform:scale(1.03);filter:brightness(1.25)}100%{transform:scale(1)}}
+    /* --- Top Pill Links (LEFT aligned) --- */
+    .top-pills {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start; /* 👈 LEFT aligned */
+        align-items: center;
+        max-width: 980px; /* 👈 match .wrap width */
+        margin: 0 auto; /* 👈 center the container, not the pills */
+        padding: 10px 16px;
+        background: rgba(11,18,32,.88);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+    }
+
+
+    /* Make room so your content isn't covered */
+    .wrap {
+        padding-top: 16px; /* you already have 28px; this is just extra safety */
+    }
+
+    .top-pills a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text);
+        text-decoration: none;
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.15);
+        white-space: nowrap;
+        transition: transform .08s ease, background .15s ease, border-color .15s ease;
+    }
+
+        .top-pills a:hover {
+            background: rgba(255,255,255,.12);
+            border-color: rgba(122,162,255,.45);
+            transform: translateY(-1px);
+        }
+
+    /* Mobile: let them wrap nicely instead of squishing */
+    @media (max-width: 420px) {
+        .top-pills {
+            flex-wrap: wrap;
+        }
+    }
+
+
+    /* --- Subtle headline glow --- */
+    .glow-text {
+        text-shadow: 0 0 8px rgba(122,162,255,.55), 0 0 18px rgba(122,162,255,.35);
+    }
+
+
+
+
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .bad{color:var(--bad)}
+  .helper_small{font-size:10px;color:var(--muted);margin-top:6px;line-height:1.35;font-weight:400}
+  #resendCodeBtn{display:none!important}
+  @keyframes highlightFlash{0%{box-shadow:0 0 0 rgba(122,162,255,0)}20%{box-shadow:0 0 18px rgba(122,162,255,.8)}75%{box-shadow:0 0 18px rgba(122,162,255,.8)}100%{box-shadow:0 0 0 rgba(122,162,255,0)}}
+  .highlight-flash{animation:highlightFlash 3s ease-in-out 2;will-change:box-shadow}
+  @supports (-webkit-touch-callout:none){input,select,textarea{font-size:16px!important}}
+  html,body{-webkit-text-size-adjust:100%}
+
+</style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Ephrata Insurance | 717auto.com</h1>
+        <p class="lead">This is an estimate for property insurance, not a bindable quote. Please be sure to asnwer the questions to the best of your knowledge to get an accurate price.</p>
+        <!-- Top Pill Links -->
+        <div class="top-pills">
+            <a href="https://price.717auto.com/" target="_blank" rel="noopener">Auto / Car</a>
+            <a href="https://go.717auto.com/" target="_blank" rel="noopener">Services</a>
+            <a href="https://go.717auto.com/location" target="_blank" rel="noopener">Location</a>
+            <a href="https://go.717auto.com/faqs" target="_blank" rel="noopener">FAQs</a>
+            
+        </div>
+        <div class="grid">
+            <div class="card">
+                
+
+                <form id="leadForm" action="https://formsubmit.co/scott@scottplan.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Home Insurance Estimate Lead" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_template" value="table" />
+                    <input type="hidden" id="hiddenRebuild" name="Estimated rebuild cost" />
+                    <input type="hidden" id="hiddenAnnual" name="Estimated annual premium" />
+                    <input type="hidden" id="hiddenMonthly" name="Estimated monthly premium" />
+                    <input type="hidden" id="hiddenRatingNotes" name="Rating notes" />
+
+                    <div class="sectionTitle">Contact information</div>
+                    <div class="row">
+                        <div><label for="firstName">First name</label><input id="firstName" name="First name" required /></div>
+                        <div><label for="lastName">Last name</label><input id="lastName" name="Last name" required /></div>
+                        <div><label for="phone">Phone</label><input id="phone" name="Phone" autocomplete="tel" inputmode="tel" placeholder="(717) 555-1212" required /></div>
+                        <div><label for="email">Email</label><input id="email" name="Email" type="email" autocomplete="email" required /></div>
+                    </div>
+
+                    <div class="sectionTitle">Property address</div>
+                    <div class="row">
+                        <div><label for="street">Street address</label><input id="street" name="Street address" autocomplete="street-address" required /></div>
+                        <div><label for="city">City</label><input id="city" name="City" autocomplete="address-level2" required /></div>
+                        <div><label for="state">State</label><select id="state" name="State"><option value="PA" selected>Pennsylvania</option><option value="MD">Maryland</option><option value="Other">Other</option></select></div>
+                        <div><label for="zip">ZIP code</label><input id="zip" name="ZIP" inputmode="numeric" placeholder="17601" /></div>
+                    </div>
+
+                    <div class="sectionTitle">Home details</div>
+                    <div class="row">
+                        <div><label for="sqft">Finished square footage</label><input id="sqft" name="Finished square footage" inputmode="numeric" placeholder="e.g., 1800" required /></div>
+                        <div><label for="yearBuilt">Year built</label><input id="yearBuilt" name="Year built" inputmode="numeric" placeholder="e.g., 1998" required /></div>
+                        <div><label for="stories">Stories</label><select id="stories" name="Stories"><option value="1">1 story</option><option value="1.5">1.5 / Cape Cod</option><option value="2" selected>2 stories</option><option value="bi">Bi-level</option><option value="split">Split-level</option><option value="3">3+ stories</option><option value="other">Other</option></select></div>
+                        <div><label for="construction">Construction type</label><select id="construction" name="Construction type"><option value="standard" selected>Standard frame/vinyl</option><option value="masonry">Masonry/brick</option><option value="stucco">Stucco</option><option value="log">Log home</option><option value="manufactured">Manufactured/modular</option><option value="other">Other</option></select></div>
+                        <div><label for="roofAge">Roof age</label><select id="roofAge" name="Roof age"><option value="0_5">0–5 years</option><option value="6_10">6–10 years</option><option value="11_15" selected>11–15 years</option><option value="16_20">16–20 years</option><option value="21_plus">21+ years</option><option value="unknown">Unknown</option></select></div>
+                        <div><label for="roofType">Roof type</label><select id="roofType" name="Roof type"><option value="asphalt" selected>Asphalt shingles</option><option value="metal">Metal</option><option value="slate_tile">Slate/tile</option><option value="flat">Flat</option><option value="unknown">Unknown</option><option value="other">Other</option></select></div>
+                    </div>
+
+                    <div class="box">
+                        <div class="sectionTitle" style="margin-top:0;">Property features</div>
+                        <div class="row">
+                            <div><label for="garage">Garage (number of cars)</label><select id="garage" name="Garage"><option value="none" selected>None</option><option value="1">1 car</option><option value="2">2 car</option><option value="3">3 car</option></select></div>
+                            <div><label for="solar">Do you have solar panels?</label><select id="solar" name="Solar panels"><option value="none" selected>No</option><option value="owned">Yes – owned</option><option value="leased">Yes – leased</option></select></div>
+                        </div>
+                        <div class="checkGrid">
+                            <label class="checkRow"><input type="checkbox" id="finishedBasement" name="Finished basement" /><span><span class="checkMain">Finished basement</span><span class="checkSub"></span></span></label>
+                            <label class="checkRow"><input type="checkbox" id="highEnd" name="Custom or high-end finishes" /><span><span class="checkMain">Custom/high-end finishes</span><span class="checkSub"></span></span></label>
+                        </div>
+                    </div>
+
+                    <div class="sectionTitle">Policy options</div>
+                    <div class="row">
+                        <div><label for="deductible">Deductible</label><select id="deductible" name="Deductible"><option value="500">$500</option><option value="1000" selected>$1,000</option><option value="2500">$2,500</option><option value="5000">$5,000</option></select></div>
+                        <div><label for="liability">Personal liability</label><select id="liability" name="Personal liability"><option value="100000">$100,000</option><option value="300000" selected>$300,000</option><option value="500000">$500,000</option><option value="1000000">$1,000,000</option></select></div>
+                        <div><label for="personalProperty">Personal property</label><select id="personalProperty" name="Personal property"><option value="50">50% of dwelling</option><option value="70" selected>70% of dwelling</option><option value="100">100% of dwelling</option></select></div>
+                        <div><label for="claims">Claims in last 5 years</label><select id="claims" name="Claims in last 5 years"><option value="0" selected>None</option><option value="1">1 claim</option><option value="2">2 claims</option><option value="3">3 or more claims</option></select></div>
+                        <div><label for="occupancy">Occupancy type</label><select id="occupancy" name="Occupancy type"><option value="owner" selected>Owner</option><option value="rental">Rental</option><option value="seasonal">Seasonal</option></select></div>
+                    </div>
+
+                    <div class="box">
+                        <div class="sectionTitle" style="margin-top:0;">Discounts & add-ons</div>
+                        <div class="checkGrid">
+                            <label class="checkRow"><input type="checkbox" id="bundle" name="Auto/home bundle" checked /><span><span class="checkMain">Auto/Home bundle</span><span class="checkSub"> Save 30%</span></span></label>
+                            <label class="checkRow"><input type="checkbox" id="alarm" name="Monitored alarm" /><span><span class="checkMain">Monitored alarm</span><span class="checkSub"> Save 2%</span></span></label>
+                            <label class="checkRow"><input type="checkbox" id="waterBackup" name="Water backup" /><span><span class="checkMain">Water backup</span><span class="checkSub"> $125/year</span></span></label>
+                            <label class="checkRow"><input type="checkbox" id="serviceLine" name="Service line" /><span><span class="checkMain">Service line</span><span class="checkSub"> $85/year</span></span></label>
+                            <label class="checkRow"><input type="checkbox" id="equipmentBreakdown" name="Equipment breakdown" /><span><span class="checkMain">Equipment breakdown</span><span class="checkSub"> $55/year</span></span></label>
+                            <label class="checkRow"><input type="checkbox" id="sinkhole" name="Sinkhole coverage" /><span><span class="checkMain">Sinkhole coverage</span><span class="checkSub"> $150/year </span></span></label>
+                            <label class="checkRow"><input type="checkbox" id="earthquake" name="Earthquake coverage" /><span><span class="checkMain">Earthquake coverage</span><span class="checkSub"> $75/year</span></span></label>
+                        </div>
+                    </div>
+
+                    <div class="sectionTitle">Other risk questions</div>
+                    <div class="row">
+                        <div>
+                            <label for="pool">Do you have a pool?</label>
+                            <select id="pool" name="Pool">
+                                <option value="none" selected>None</option>
+                                <option value="inground_fenced">Inground w/ fence</option>
+                                <option value="inground_no_fence">Inground w/o fence</option>
+                                <option value="above_fenced">Above ground w/ fence</option>
+                                <option value="above_no_fence">Above ground w/o fence</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="trampoline">Do you have a trampoline?</label>
+                            <select id="trampoline" name="Trampoline">
+                                <option value="none" selected>None</option>
+                                <option value="net_fenced">Yes w/ netting and fenced</option>
+                                <option value="net_no_fence">Yes w/ netting but no fence</option>
+                                <option value="no_netting">Yes w/ no netting</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="woodstove">Do you have a freestanding coal, pellet, or woodstove?</label>
+                            <select id="woodstove" name="Freestanding coal, pellet, or woodstove">
+                                <option value="none" selected>None</option>
+                                <option value="ul">Yes, with UL safety label</option>
+                                <option value="no_ul">Yes, no UL safety label</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="dog">Do you have a dog?</label>
+                            <select id="dog" name="Dog">
+                                <option value="none" selected>None</option>
+                                <option value="small">Yes, under 25 lbs</option>
+                                <option value="large">Yes, over 25 lbs</option>
+                                <option value="restricted">
+                                    Yes, and it one of the following: Presa Canarios, Pit Bull / Staffordshire Terrier,
+                                    Rottweiler, Akita, Chow, Doberman, German Shepherd, or mix of anyone of those breeds
+                                </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="farmAnimals">Do you have any farm animals?</label>
+                            <select id="farmAnimals" name="Farm animals">
+                                <option value="none" selected>None</option>
+                                <option value="few">Yes, 1–6 farm animals</option>
+                                <option value="many">Yes, 6+ farm animals</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="checkRow" style="margin-top:10px;"><input type="checkbox" id="business" name="Business in home" /><span><span class="checkMain">Business in home</span><span class="checkSub"> enter details below</span></span></label>
+                        </div>
+                    </div>
+
+                    <label for="notes">Anything else we should know?</label>
+                    <textarea id="notes" name="Notes" rows="3" placeholder="Current carrier, renewal date, claims details, updates, mortgagee, etc."></textarea>
+
+                    <div class="box" id="smsVerifyBox">
+                        <div class="sectionTitle" style="margin-top:0;">Phone verification</div>
+
+                        <label class="checkRow" style="margin-top:10px;">
+                            <input type="checkbox" id="smsConsent" />
+                            <span>
+                                <span class="checkMain">I agree to having my information verified</span>
+                                <span class="helper_small">
+                                    By checking this box, you agree to have your home insurance information verified by Ephrata Insurance and/or its affiliates.
+                                    You will receive an automated SMS/text message from 717auto.com to verify it is you. No purchase is required.
+                                    Msg & data rates may apply. Reply STOP to cancel, HELP for help.
+                                </span>
+                            </span>
+                        </label>
+
+                        <button type="button" class="btn" id="sendCodeBtn">Send verification code</button>
+                        <button type="button" class="btn" id="resendCodeBtn" style="display:none;margin-top:10px;">Resend code</button>
+                        <div id="cooldownText" class="helper"></div>
+
+                        <label for="smsCode">Verification code</label>
+                        <input type="text" id="smsCode" maxlength="6" placeholder="Enter 6-digit code" inputmode="numeric" />
+
+                        <button type="button" class="btn secondary" id="verifyCodeBtn">Verify & show estimate</button>
+                        <div id="smsStatus" class="helper"></div>
+
+                        <!-- Firebase phone auth uses this invisible reCAPTCHA mount -->
+                        <div id="recaptcha-container"></div>
+                    </div>
+
+                    <button class="btn" type="submit" id="submitBtn">Send & unlock estimate</button>
+                    <p class="small">By submitting, you agree we may contact you about insurance options. No coverage is bound by this form.</p>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2 style="margin:0 0 8px;font-size:18px;">Estimated premium</h2>
+                <div class="lockNote" id="lockNote">Complete the form and verify the phone number to show the estimate.</div>
+                <div class="resultBox locked" id="estimatePanel">
+                    <p class="sub">Based on estimated rebuild cost, home age, roof age, deductible, selected add-ons, discounts, and risk factors.</p>
+                    <div class="big" id="estMain">$—</div>
+                    <p class="sub" id="estSub">Enter home details to calculate.</p>
+                    <div class="kpi">
+                        <div><b>Monthly estimate</b><span id="kpiMonthly">$—</span></div>
+                        <div><b>Annual estimate</b><span id="kpiAnnual">$—</span></div>
+                        <div><b>Rebuild estimate</b><span id="kpiRebuild">$—</span></div>
+                        <div><b>Deductible</b><span id="kpiDeductible">—</span></div>
+                        <div><b>Personal liability</b><span id="kpiLiability">—</span></div>
+                        <div><b>Personal property</b><span id="kpiPersonalProperty">—</span></div>
+                    </div>
+                    <div class="kpi" id="addonKpiGrid" style="display:none;"></div>
+                    <div class="divider"></div>
+                    <p class="small" id="ratingNotes">Rating notes will appear here.</p>
+                </div>
+                <div class="divider"></div>
+                <p class="small"><span class="warn">Important:</span> This is a simplified home insurance estimate. Final premium depends on carrier underwriting, inspections, claims history, credit/insurance score, coverage forms, discounts, and eligibility.</p>
+            </div>
+        </div>
+    </div>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAqU4FT733SpBxjsPfoDwtArkcZfAOyh8k",
+    authDomain: "auto-sms-verify.firebaseapp.com",
+    projectId: "auto-sms-verify",
+    storageBucket: "auto-sms-verify.firebasestorage.app",
+    messagingSenderId: "676515662964",
+    appId: "1:676515662964:web:6358c02b398664cd8b9521",
+    measurementId: "G-3K835K066L"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const LS_PAYLOAD = "pendingHomeQuotePayload";
+  const LS_PHONE = "pendingHomeVerifyPhone";
+
+  function digitsOnly(s){ return String(s||"").replace(/\D/g, ""); }
+  function toE164US(phoneRaw){
+    const d = digitsOnly(phoneRaw);
+    if (!d) return "";
+    if (d.length === 11 && d.startsWith("1")) return "+" + d;
+    if (d.length === 10) return "+1" + d;
+    const t = String(phoneRaw||"").trim();
+    if (t.startsWith("+")) return t;
+    return "+" + d;
+  }
+
+  let recaptchaVerifier = null;
+  let recaptchaWidgetId = null;
+  let confirmationResult = null;
+
+  function resetRecaptcha(){
+    try{
+      if (window.grecaptcha && recaptchaWidgetId != null) window.grecaptcha.reset(recaptchaWidgetId);
+    }catch(e){}
+  }
+
+  async function ensureRecaptcha(forceRecreate = false){
+    if (forceRecreate && recaptchaVerifier){
+      try { recaptchaVerifier.clear(); } catch(e) {}
+      recaptchaVerifier = null;
+      recaptchaWidgetId = null;
+    }
+    if (!recaptchaVerifier){
+      recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
+        size: "invisible",
+        callback: () => {},
+        "expired-callback": () => resetRecaptcha()
+      });
+    }
+    if (recaptchaWidgetId == null) recaptchaWidgetId = await recaptchaVerifier.render();
+    return recaptchaVerifier;
+  }
+
+  async function sendSmsCode(phoneRaw, payload){
+    const phone = toE164US(phoneRaw);
+    if (!phone) throw new Error("Missing phone");
+    localStorage.setItem(LS_PHONE, phone);
+    localStorage.setItem(LS_PAYLOAD, JSON.stringify(payload || {}));
+    try{
+      const verifier = await ensureRecaptcha();
+      confirmationResult = await signInWithPhoneNumber(auth, phone, verifier);
+      window.__SMS__.confirmationResult = confirmationResult;
+      return phone;
+    }catch(err){
+      console.warn("sendSmsCode failed; resetting/recreating reCAPTCHA:", err);
+      try { resetRecaptcha(); } catch(e) {}
+      try { await ensureRecaptcha(true); } catch(e) {}
+      throw err;
+    }
+  }
+
+  async function resendSmsCode(){
+    const payloadRaw = localStorage.getItem(LS_PAYLOAD);
+    const phone = localStorage.getItem(LS_PHONE);
+    if (!payloadRaw || !phone) throw new Error("Nothing to resend");
+    return await sendSmsCode(phone, JSON.parse(payloadRaw));
+  }
+
+  function fireSmsVerifiedConversionOnce(){
+    if (!window.gtag) return;
+    if (sessionStorage.getItem("homeSmsVerifiedLeadFired") === "1") return;
+    sessionStorage.setItem("homeSmsVerifiedLeadFired", "1");
+    gtag("event", "conversion", { send_to: "AW-17952439960/bQJTCLfdpvgbEJj9sfBC" });
+  }
+
+  async function verifySmsCode(code){
+    const DEV_BYPASS_CODE = "999999";
+    const DEV_MODE =
+      (window.location.protocol === "file:" || window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") ||
+      (localStorage.getItem("DEV_SMS_BYPASS") === "1");
+
+    const entered = String(code||"").trim();
+    if (DEV_MODE && entered === DEV_BYPASS_CODE) return true;
+    if (!confirmationResult) throw new Error("No confirmation state");
+
+    const cred = await confirmationResult.confirm(entered);
+    const ok = !!cred?.user;
+    if (ok) fireSmsVerifiedConversionOnce();
+    return ok;
+  }
+
+  window.__SMS__ = { sendSmsCode, resendSmsCode, verifySmsCode, toE164US };
+</script>
+<script>
+const fmt = new Intl.NumberFormat('en-US', {style:'currency', currency:'USD', maximumFractionDigits:0});
+const money = n => isFinite(n) ? fmt.format(Math.round(n)) : '$—';
+const val = id => document.getElementById(id).value;
+const checked = id => document.getElementById(id).checked;
+let estimateUnlocked = false;
+
+function ageFromYear(year){
+  const y = parseInt(year,10);
+  const current = new Date().getFullYear();
+  if(!y || y < 1700 || y > current) return null;
+  return current - y;
+}
+function rebuildCostPerSqft(age){
+  if(age === null) return 225;
+  if(age <= 15) return 200;
+  if(age <= 35) return 210;
+  if(age <= 55) return 225;
+  if(age <= 85) return 235;
+  return 255;
+}
+function addNote(notes, text){ notes.push(text); }
+function selectedText(id){
+  const el = document.getElementById(id);
+  return el && el.selectedOptions && el.selectedOptions[0] ? el.selectedOptions[0].textContent : '—';
+}
+function calculate(){
+  const sqft = parseFloat(String(val('sqft')).replace(/[^0-9.]/g,''));
+  const homeAge = ageFromYear(val('yearBuilt'));
+  const roofAgeChoice = val('roofAge');
+  const notes = [];
+  if(!sqft || sqft < 300){ return null; }
+
+  const perSqft = rebuildCostPerSqft(homeAge);
+  let rebuild = sqft * perSqft;
+  addNote(notes, `Base rebuild: ${sqft.toLocaleString()} sq ft × ${money(perSqft)}/sq ft`);
+
+  if(checked('finishedBasement')){ rebuild *= 1.08; addNote(notes,'Finished basement: +8% rebuild'); }
+  const garage = val('garage');
+  if(garage === '1'){ rebuild *= 1.03; addNote(notes,'1-car garage: +3% rebuild'); }
+  if(garage === '2'){ rebuild *= 1.06; addNote(notes,'2-car garage: +6% rebuild'); }
+  if(garage === '3'){ rebuild *= 1.10; addNote(notes,'3-car garage: +10% rebuild'); }
+  if(checked('highEnd')){ rebuild *= 1.12; addNote(notes,'Custom/high-end finishes: +12% rebuild'); }
+
+  let factor = 0.0040;
+  addNote(notes,'Starting premium factor: 0.40% of rebuild cost');
+
+  if(homeAge !== null){
+    if(homeAge > 85){ factor *= 1.20; addNote(notes,'Home age over 85 years: +20%'); }
+    else if(homeAge > 55){ factor *= 1.12; addNote(notes,'Home age over 55 years: +12%'); }
+    else if(homeAge > 35){ factor *= 1.06; addNote(notes,'Home age over 35 years: +6%'); }
+    else if(homeAge <= 15){ factor *= 0.90; addNote(notes,'Newer home: -10%'); }
+  }
+
+  if(roofAgeChoice === '0_5'){ factor *= 0.95; addNote(notes,'Roof 0–5 years old: -5%'); }
+  if(roofAgeChoice === '16_20'){ factor *= 1.08; addNote(notes,'Roof 16–20 years old: +8%'); }
+  if(roofAgeChoice === '21_plus'){ factor *= 1.15; addNote(notes,'Roof 21+ years old: +15%'); }
+  if(roofAgeChoice === 'unknown'){ factor *= 1.15; addNote(notes,'Roof age unknown: +15%'); }
+
+  const roofType = val('roofType');
+  if(roofType === 'flat'){ factor *= 1.08; addNote(notes,'Flat roof: +8%'); }
+  if(roofType === 'metal'){ factor *= 0.97; addNote(notes,'Metal roof: -3%'); }
+  if(roofType === 'slate_tile'){ factor *= 1.05; addNote(notes,'Slate/tile roof: +5%'); }
+  if(roofType === 'other'){ factor *= 1.03; addNote(notes,'Other roof type: +3%'); }
+
+  const stories = val('stories');
+  if(stories === '1.5'){ factor *= 1.02; addNote(notes,'1.5 / Cape Cod: +2%'); }
+  if(stories === 'bi'){ factor *= 1.03; addNote(notes,'Bi-level: +3%'); }
+  if(stories === 'split'){ factor *= 1.03; addNote(notes,'Split-level: +3%'); }
+  if(stories === '3'){ factor *= 1.06; addNote(notes,'3+ stories: +6%'); }
+
+  const construction = val('construction');
+  if(construction === 'masonry'){ factor *= 0.98; addNote(notes,'Masonry/brick construction: -2%'); }
+  if(construction === 'stucco'){ factor *= 1.04; addNote(notes,'Stucco construction: +4%'); }
+  if(construction === 'log'){ factor *= 1.20; addNote(notes,'Log home: +20%'); }
+  if(construction === 'manufactured'){ factor *= 0.85; addNote(notes,'Manufactured/modular: -15%'); }
+  if(construction === 'other'){ factor *= 1.05; addNote(notes,'Other construction type: +5%'); }
+
+  const deductible = val('deductible');
+  if(deductible === '500'){ factor *= 1.08; addNote(notes,'$500 deductible: +8%'); }
+  if(deductible === '2500'){ factor *= 0.92; addNote(notes,'$2,500 deductible: -8%'); }
+  if(deductible === '5000'){ factor *= 0.85; addNote(notes,'$5,000 deductible: -15%'); }
+
+  const liab = val('liability');
+  if(liab === '500000'){ factor *= 1.03; addNote(notes,'$500k liability: +3%'); }
+  if(liab === '1000000'){ factor *= 1.08; addNote(notes,'$1M liability: +8%'); }
+
+  const pp = val('personalProperty');
+  if(pp === '50'){ factor *= 0.97; addNote(notes,'50% personal property: -3%'); }
+  if(pp === '100'){ factor *= 1.06; addNote(notes,'100% personal property: +6%'); }
+
+  const claims = val('claims');
+  if(claims === '1'){ factor *= 1.12; addNote(notes,'1 claim in 5 years: +12%'); }
+  if(claims === '2'){ factor *= 1.25; addNote(notes,'2 claims in 5 years: +25%'); }
+  if(claims === '3'){ factor *= 1.45; addNote(notes,'3+ claims in 5 years: +45%'); }
+
+  if(checked('bundle')){ factor *= 0.70; addNote(notes,'Auto/home bundle: -30%'); }
+  if(checked('alarm')){ factor *= 0.98; addNote(notes,'Monitored alarm: -5%'); }
+
+  const solar = val('solar');
+  if(solar === 'owned'){ factor *= 1.04; addNote(notes,'Owned solar panels: +4%'); }
+  if(solar === 'leased'){ factor *= 1.02; addNote(notes,'Leased solar panels: +2%'); }
+
+  const occupancy = val('occupancy');
+  if(occupancy === 'rental'){ factor *= 1.12; addNote(notes,'Rental occupancy: +12%'); }
+  if(occupancy === 'seasonal'){ factor *= 1.10; addNote(notes,'Seasonal occupancy: +10%'); }
+
+  let flatAddons = 0;
+  const addonCoverages = [];
+  if(checked('waterBackup')){ flatAddons += 125; addNote(notes,'Water backup: +$125/year'); addonCoverages.push({label:'Water backup', value:'$10,000'}); }
+  if(checked('serviceLine')){ flatAddons += 85; addNote(notes,'Service line: +$85/year'); addonCoverages.push({label:'Service line', value:'$10,000'}); }
+  if(checked('equipmentBreakdown')){ flatAddons += 55; addNote(notes,'Equipment breakdown: +$55/year'); addonCoverages.push({label:'Equipment breakdown', value:'$100,000'}); }
+  if(checked('sinkhole')){ flatAddons += 150; addNote(notes,'Sinkhole coverage: +$150/year'); addonCoverages.push({label:'Sinkhole', value:'Policy limits'}); }
+  if(checked('earthquake')){ flatAddons += 75; addNote(notes,'Earthquake coverage: +$75/year'); addonCoverages.push({label:'Earthquake', value:'5% deductible'}); }
+  const pool = val('pool');
+  if(pool === 'inground_fenced'){ factor *= 1.04; addNote(notes,'Inground pool w/ fence: +4%'); }
+  if(pool === 'inground_no_fence'){ factor *= 1.10; addNote(notes,'Inground pool w/o fence: +10%'); }
+  if(pool === 'above_fenced'){ factor *= 1.03; addNote(notes,'Above ground pool w/ fence: +3%'); }
+  if(pool === 'above_no_fence'){ factor *= 1.08; addNote(notes,'Above ground pool w/o fence: +8%'); }
+
+  const trampoline = val('trampoline');
+  if(trampoline === 'net_fenced'){ factor *= 1.04; addNote(notes,'Trampoline w/ netting and fence: +4%'); }
+  if(trampoline === 'net_no_fence'){ factor *= 1.08; addNote(notes,'Trampoline w/ netting, no fence: +8%'); }
+  if(trampoline === 'no_netting'){ factor *= 1.15; addNote(notes,'Trampoline w/ no netting: +15%'); }
+
+  const woodstove = val('woodstove');
+  if(woodstove === 'ul'){ factor *= 1.05; addNote(notes,'Freestanding stove w/ UL safety label: +5%'); }
+  if(woodstove === 'no_ul'){ factor *= 1.15; addNote(notes,'Freestanding stove without UL safety label: +15%'); }
+
+  const dog = val('dog');
+  if(dog === 'small'){ factor *= 1.02; addNote(notes,'Dog under 25 lbs: +2%'); }
+  if(dog === 'large'){ factor *= 1.05; addNote(notes,'Dog over 25 lbs: +5%'); }
+  if(dog === 'restricted'){ factor *= 1.15; addNote(notes,'Restricted dog breed / mix: +15%'); }
+
+  const farmAnimals = val('farmAnimals');
+  if(farmAnimals === 'few'){ factor *= 1.05; addNote(notes,'1–6 farm animals: +5%'); }
+  if(farmAnimals === 'many'){ factor *= 1.12; addNote(notes,'6+ farm animals: +12%'); }
+
+  if(checked('business')){ factor *= 1.06; addNote(notes,'Business in home: +6%'); }
+
+  const annual = Math.max((rebuild * factor) + flatAddons, 500);
+  const monthly = annual / 12;
+  return {
+    rebuild, annual, monthly, factor, notes, addonCoverages,
+    deductibleText: selectedText('deductible'),
+    liabilityText: selectedText('liability'),
+    personalPropertyText: selectedText('personalProperty')
+  };
+}
+function render(){
+  const r = calculate();
+  if(!r){
+    document.getElementById('estMain').textContent = '$—';
+    document.getElementById('estSub').textContent = 'Enter home details to calculate.';
+    ['kpiMonthly','kpiAnnual','kpiRebuild'].forEach(id=>document.getElementById(id).textContent='$—');
+    ['kpiDeductible','kpiLiability','kpiPersonalProperty'].forEach(id=>document.getElementById(id).textContent='—');
+    const addonGrid = document.getElementById('addonKpiGrid');
+    addonGrid.style.display='none';
+    addonGrid.innerHTML='';
+    document.getElementById('ratingNotes').textContent='Rating notes will appear here.';
+    return;
+  }
+  document.getElementById('estMain').textContent = money(r.monthly) + '/mo';
+  document.getElementById('estSub').textContent = `${money(r.annual)} per year estimate`;
+  document.getElementById('kpiMonthly').textContent = money(r.monthly);
+  document.getElementById('kpiAnnual').textContent = money(r.annual);
+  document.getElementById('kpiRebuild').textContent = money(r.rebuild);
+  document.getElementById('kpiDeductible').textContent = r.deductibleText;
+  document.getElementById('kpiLiability').textContent = r.liabilityText;
+  document.getElementById('kpiPersonalProperty').textContent = r.personalPropertyText;
+  const addonGrid = document.getElementById('addonKpiGrid');
+  if(r.addonCoverages.length){
+    addonGrid.style.display='grid';
+    addonGrid.innerHTML = r.addonCoverages.map(a =>
+      `<div><b>${a.label}</b><span>${a.value}</span></div>`
+    ).join('');
+  } else {
+    addonGrid.style.display='none';
+    addonGrid.innerHTML='';
+  }
+  document.getElementById('ratingNotes').innerHTML = r.notes.map(n=>'• '+n).join('<br>');
+  document.getElementById('hiddenRebuild').value = money(r.rebuild);
+  document.getElementById('hiddenAnnual').value = money(r.annual);
+  document.getElementById('hiddenMonthly').value = money(r.monthly);
+  document.getElementById('hiddenRatingNotes').value = r.notes.join(' | ');
+}
+function unlockEstimate(){
+  estimateUnlocked = true;
+  document.getElementById('estimatePanel').classList.remove('locked');
+  document.getElementById('lockNote').style.display='none';
+  document.getElementById('estMain').classList.add('pricePulse');
+  setTimeout(()=>document.getElementById('estMain').classList.remove('pricePulse'),400);
+  render();
+  document.getElementById('estimatePanel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+document.querySelectorAll('input,select,textarea').forEach(el=>el.addEventListener('input', render));
+document.querySelectorAll('input[type="checkbox"],select').forEach(el=>el.addEventListener('change', render));
+render();
+
+document.getElementById('leadForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('sendCodeBtn')?.click();
+  return false;
+});
+
+function collectPayload(){
+  render();
+  const r = calculate();
+  return {
+    firstName: val('firstName'),
+    lastName: val('lastName'),
+    phone: val('phone'),
+    email: val('email'),
+    street: val('street'),
+    city: val('city'),
+    state: val('state'),
+    zip: val('zip'),
+    rebuild: r ? money(r.rebuild) : '',
+    annual: r ? money(r.annual) : '',
+    monthly: r ? money(r.monthly) : '',
+    notes: r ? r.notes.join(' | ') : ''
+  };
+}
+
+function submitLeadToFormSubmit(){
+  try{
+    const form = document.getElementById('leadForm');
+    if(!form || !form.action) return;
+
+    const ensureHidden = (name, value) => {
+      let el = form.querySelector(`input[name="${name}"]`);
+      if(!el){
+        el = document.createElement('input');
+        el.type = 'hidden';
+        el.name = name;
+        form.appendChild(el);
+      }
+      el.value = String(value ?? '');
+    };
+
+    render();
+    ensureHidden('Verified Phone (E.164)', window.__SMS__?.toE164US ? window.__SMS__.toE164US(val('phone')) : val('phone'));
+    ensureHidden('_captcha', 'false');
+    ensureHidden('_template', 'table');
+    ensureHidden('_subject', 'New Home Insurance Estimate Lead');
+
+    const prevTarget = form.target;
+    form.target = 'formsubmit_iframe';
+    form.submit();
+    form.target = prevTarget || '';
+  }catch(e){
+    console.warn('FormSubmit submit failed:', e);
+  }
+}
+
+(function(){
+  const sendBtn = document.getElementById('sendCodeBtn');
+  const resendBtn = document.getElementById('resendCodeBtn');
+  const verifyBtn = document.getElementById('verifyCodeBtn');
+  const codeEl = document.getElementById('smsCode');
+  const cooldownText = document.getElementById('cooldownText');
+  const smsStatus = document.getElementById('smsStatus');
+  let cooldownTimer = null;
+
+  function setStatus(msg, cls){
+    if(!smsStatus) return;
+    smsStatus.className = 'helper ' + (cls || '');
+    smsStatus.innerHTML = msg;
+  }
+
+  function startResendCooldown(seconds){
+    let remaining = Math.max(0, parseInt(seconds,10) || 0);
+    if(sendBtn) sendBtn.disabled = true;
+    if(cooldownText) cooldownText.textContent = remaining ? `You can send another code in ${remaining}s` : '';
+    if(cooldownTimer) clearInterval(cooldownTimer);
+    cooldownTimer = setInterval(() => {
+      remaining -= 1;
+      if(cooldownText) cooldownText.textContent = remaining > 0 ? `You can send another code in ${remaining}s` : '';
+      if(remaining <= 0){
+        clearInterval(cooldownTimer);
+        cooldownTimer = null;
+        if(sendBtn) sendBtn.disabled = false;
+        if(cooldownText) cooldownText.textContent = '';
+      }
+    }, 1000);
+  }
+
+  async function sendOrResend(isResend){
+    const form = document.getElementById('leadForm');
+    if(form && !form.checkValidity()){
+      form.reportValidity();
+      setStatus('❌ Please complete the required fields above before we text your code.', 'bad');
+      return;
+    }
+
+    const consent = !!document.getElementById('smsConsent')?.checked;
+    if(!consent){ alert('Please check the box to consent to receive text messages.'); return; }
+    if(!window.__SMS__){ setStatus('❌ SMS not configured.', 'bad'); return; }
+
+    try{
+      if(sendBtn) sendBtn.disabled = true;
+      if(resendBtn) resendBtn.disabled = true;
+      setStatus(isResend ? 'Resending code…' : 'Sending code…', '');
+      const phoneRaw = val('phone');
+      const payload = collectPayload();
+      const e164 = isResend ? await window.__SMS__.resendSmsCode() : await window.__SMS__.sendSmsCode(phoneRaw, payload);
+      setStatus(`✅ Code sent to <b>${e164}</b>.`, 'ok');
+      if(resendBtn) resendBtn.style.display = 'block';
+      if(verifyBtn) verifyBtn.disabled = false;
+      if(codeEl) codeEl.focus();
+      startResendCooldown(60);
+    }catch(err){
+      console.error(err);
+      const code = err?.code ? String(err.code) : '';
+      const msg = err?.message ? String(err.message) : '';
+      setStatus(`❌ Could not send SMS code.<br><small>${code} ${msg}</small>`, 'bad');
+      if(sendBtn) sendBtn.disabled = false;
+      if(resendBtn) resendBtn.disabled = false;
+    }
+  }
+
+  if(sendBtn) sendBtn.addEventListener('click', () => sendOrResend(false));
+  if(resendBtn) resendBtn.addEventListener('click', () => sendOrResend(true));
+
+  if(verifyBtn) verifyBtn.addEventListener('click', async () => {
+    const code = (codeEl?.value || '').trim();
+    if(!code){ alert('Enter the verification code.'); return; }
+    verifyBtn.disabled = true;
+    setStatus('Verifying…', '');
+
+    try{
+      const ok = await window.__SMS__.verifySmsCode(code);
+      if(!ok) throw new Error('verify failed');
+    }catch(err){
+      console.error('SMS verify failed:', err);
+      setStatus('❌ Verification failed. Check the code and try again. You can send a new code if needed.', 'bad');
+      verifyBtn.disabled = false;
+      return;
+    }
+
+    setStatus('✅ Phone verified. Showing your estimate below.', 'ok');
+    window.__VERIFIED__ = true;
+    unlockEstimate();
+    submitLeadToFormSubmit();
+    const panel = document.getElementById('estimatePanel');
+    panel?.classList.add('highlight-flash');
+    setTimeout(() => panel?.classList.remove('highlight-flash'), 1300);
+    verifyBtn.disabled = false;
+  });
+})();
+</script>
+<iframe name="formsubmit_iframe" style="display:none;"></iframe>
+</body>
+</html>
