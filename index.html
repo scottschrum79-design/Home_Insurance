@@ -103,7 +103,8 @@
 
 
 
-  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .btn:disabled{opacity:.55;cursor:not-allowed;background:rgba(255,255,255,.12)!important;color:var(--muted)!important;border:1px solid var(--border)!important}
+  .btn.ready{background:linear-gradient(90deg,var(--accent),#9d7aff)!important;color:#0b1220!important;border:0!important}
   .bad{color:var(--bad)}
   .helper_small{font-size:10px;color:var(--muted);margin-top:6px;line-height:1.35;font-weight:400}
   #resendCodeBtn{display:none!important}
@@ -287,7 +288,6 @@
                         <div id="recaptcha-container"></div>
                     </div>
 
-                    <button class="btn" type="submit" id="submitBtn">Send & unlock estimate</button>
                     <p class="small">By submitting, you agree we may contact you about insurance options. No coverage is bound by this form.</p>
                 </form>
             </div>
@@ -706,7 +706,6 @@ function submitLeadToFormSubmit(){
       if(remaining <= 0){
         clearInterval(cooldownTimer);
         cooldownTimer = null;
-        if(sendBtn) sendBtn.disabled = false;
         if(cooldownText) cooldownText.textContent = '';
       }
     }, 1000);
@@ -732,8 +731,16 @@ function submitLeadToFormSubmit(){
       const payload = collectPayload();
       const e164 = isResend ? await window.__SMS__.resendSmsCode() : await window.__SMS__.sendSmsCode(phoneRaw, payload);
       setStatus(`✅ Code sent to <b>${e164}</b>.`, 'ok');
+      if(sendBtn){
+        sendBtn.disabled = true;
+        sendBtn.textContent = 'Verification code sent';
+      }
       if(resendBtn) resendBtn.style.display = 'block';
-      if(verifyBtn) verifyBtn.disabled = false;
+      if(verifyBtn){
+        verifyBtn.disabled = false;
+        verifyBtn.classList.remove('secondary');
+        verifyBtn.classList.add('ready');
+      }
       if(codeEl) codeEl.focus();
       startResendCooldown(60);
     }catch(err){
@@ -772,7 +779,8 @@ function submitLeadToFormSubmit(){
     const panel = document.getElementById('estimatePanel');
     panel?.classList.add('highlight-flash');
     setTimeout(() => panel?.classList.remove('highlight-flash'), 1300);
-    verifyBtn.disabled = false;
+    verifyBtn.textContent = 'Phone verified';
+    verifyBtn.disabled = true;
   });
 })();
 </script>
