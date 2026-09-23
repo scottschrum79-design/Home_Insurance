@@ -93,21 +93,21 @@
             flex-wrap: wrap;
         }
     }
-    .top-pills .home-pill {
+    .top-pills .active-pill {
         background: linear-gradient(135deg, #6d28d9, #8b5cf6);
         border-color: #9f67ff;
         color: #fff;
         font-weight: 700;
         box-shadow: 0 0 14px rgba(139,92,246,.45);
-        animation: homeGlow 2.5s infinite;
+        animation: activeGlow 2.5s infinite;
     }
 
-        .top-pills .home-pill:hover {
+        .top-pills .active-pill:hover {
             transform: translateY(-1px) scale(1.03);
             box-shadow: 0 0 20px rgba(139,92,246,.75);
         }
 
-    @keyframes homeGlow {
+    @keyframes activeGlow {
         0%,100% {
             box-shadow: 0 0 10px rgba(139,92,246,.35);
         }
@@ -176,16 +176,15 @@
         <p class="lead">This is an estimate for property insurance, not a bindable quote. Please be sure to asnwer the questions to the best of your knowledge to get an accurate price.</p>
         <!-- Top Pill Links -->
         <div class="top-pills">
-            <a href="https://price.717auto.com/"
-               target="_blank"
-               rel="noopener"
-               class="home-pill">
+            <a href="https://price.717auto.com/" target="_blank" rel="noopener">
                 🚗 Auto / Car
+            </a>
+            <a href="https://home.717auto.com/" class="active-pill" aria-current="page">
+                🏠 Home / Property
             </a>
             <a href="https://go.717auto.com/" target="_blank" rel="noopener">Services</a>
             <a href="https://go.717auto.com/location" target="_blank" rel="noopener">Location</a>
             <a href="https://go.717auto.com/faqs" target="_blank" rel="noopener">FAQs</a>
-
         </div>
         <div class="grid">
             <div class="card">
